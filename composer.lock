@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffc3de4ee3b334c6540f3e9557e47a36",
+    "content-hash": "b648cb4694dd04e2e616f21335eca830",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,53 @@
                 "source": "https://github.com/asm89/stack-cors/tree/1.3.0"
             },
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "badcow/dns",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Badcow/DNS.git",
+                "reference": "aeb1aa568001319ec881581010471b2f04528808"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Badcow/DNS/zipball/aeb1aa568001319ec881581010471b2f04528808",
+                "reference": "aeb1aa568001319ec881581010471b2f04528808",
+                "shasum": ""
+            },
+            "require": {
+                "christian-riesen/base32": "^1.5.2",
+                "php": "^7.3 || ^8.0",
+                "rlanvin/php-ip": "^2.0 || dev-php8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Badcow\\DNS\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Williams",
+                    "email": "sam@badcow.co"
+                }
+            ],
+            "description": "A PHP library for creating DNS zone files based on RFC1035",
+            "support": {
+                "issues": "https://github.com/Badcow/DNS/issues",
+                "source": "https://github.com/Badcow/DNS/tree/v4.1.1"
+            },
+            "time": "2021-01-21T22:53:54+00:00"
         },
         {
             "name": "brick/math",
@@ -176,6 +223,65 @@
                 "source": "https://github.com/cakephp/chronos"
             },
             "time": "2021-02-06T03:37:44+00:00"
+        },
+        {
+            "name": "christian-riesen/base32",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ChristianRiesen/base32.git",
+                "reference": "2e82dab3baa008e24a505649b0d583c31d31e894"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ChristianRiesen/base32/zipball/2e82dab3baa008e24a505649b0d583c31d31e894",
+                "reference": "2e82dab3baa008e24a505649b0d583c31d31e894",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^8.5.13 || ^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Base32\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Riesen",
+                    "email": "chris.riesen@gmail.com",
+                    "homepage": "http://christianriesen.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base32 encoder/decoder according to RFC 4648",
+            "homepage": "https://github.com/ChristianRiesen/base32",
+            "keywords": [
+                "base32",
+                "decode",
+                "encode",
+                "rfc4648"
+            ],
+            "support": {
+                "issues": "https://github.com/ChristianRiesen/base32/issues",
+                "source": "https://github.com/ChristianRiesen/base32/tree/1.6.0"
+            },
+            "time": "2021-02-26T10:19:33+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -3395,6 +3501,50 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
+            "name": "rlanvin/php-ip",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rlanvin/php-ip.git",
+                "reference": "1bea521987f3c7db5f4b9f17f321e90feaefad11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rlanvin/php-ip/zipball/1bea521987f3c7db5f4b9f17f321e90feaefad11",
+                "reference": "1bea521987f3c7db5f4b9f17f321e90feaefad11",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gmp": "*",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=6.5 <8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpIP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "IPv4/IPv6 manipulation library for PHP",
+            "homepage": "https://github.com/rlanvin/php-ip",
+            "keywords": [
+                "IP",
+                "ipv4",
+                "ipv6"
+            ],
+            "support": {
+                "issues": "https://github.com/rlanvin/php-ip/issues",
+                "source": "https://github.com/rlanvin/php-ip/tree/v2.1.0"
+            },
+            "time": "2020-10-31T12:31:56+00:00"
+        },
+        {
             "name": "sebastian/diff",
             "version": "3.0.3",
             "source": {
@@ -3589,6 +3739,63 @@
                 }
             ],
             "time": "2020-12-01T20:55:10+00:00"
+        },
+        {
+            "name": "spatie/dns",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/dns.git",
+                "reference": "2ca388f359323364aaf438a5fa28da74bc55c6f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/dns/zipball/2ca388f359323364aaf438a5fa28da74bc55c6f4",
+                "reference": "2ca388f359323364aaf438a5fa28da74bc55c6f4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "symfony/process": "^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Dns\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Harish Toshniwal",
+                    "email": "harish@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Retrieve DNS records",
+            "homepage": "https://github.com/spatie/dns",
+            "keywords": [
+                "dns",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/dns/issues",
+                "source": "https://github.com/spatie/dns/tree/1.6.0"
+            },
+            "time": "2020-12-02T19:24:48+00:00"
         },
         {
             "name": "spatie/image",
@@ -6617,87 +6824,6 @@
                 }
             ],
             "time": "2020-11-12T00:07:28+00:00"
-        },
-        {
-            "name": "whoisdoma/dnsparser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Whoisdoma/DNSParser.git",
-                "reference": "1ea36c53dbbb9b9038e26f3005bee750268b66d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Whoisdoma/DNSParser/zipball/1ea36c53dbbb9b9038e26f3005bee750268b66d4",
-                "reference": "1ea36c53dbbb9b9038e26f3005bee750268b66d4",
-                "shasum": ""
-            },
-            "require": {
-                "whoisdoma/domainparser": "dev-master"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Whoisdoma\\DNSParser\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Preferm DNS lookups for domains",
-            "homepage": "https://github.com/Whoisdoma/DNSParser/",
-            "keywords": [
-                "dns",
-                "dnsparser",
-                "domain dns",
-                "php",
-                "whois"
-            ],
-            "support": {
-                "issues": "https://github.com/Whoisdoma/DNSParser/issues",
-                "source": "https://github.com/Whoisdoma/DNSParser/tree/master"
-            },
-            "time": "2019-10-09T12:09:24+00:00"
-        },
-        {
-            "name": "whoisdoma/domainparser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Whoisdoma/DomainParser.git",
-                "reference": "8ed4ea009f20c667cf6e3a361ad4479196ad4885"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Whoisdoma/DomainParser/zipball/8ed4ea009f20c667cf6e3a361ad4479196ad4885",
-                "reference": "8ed4ea009f20c667cf6e3a361ad4479196ad4885",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Whoisdoma\\DomainParser\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A domain name parser to parse and to validate a domain name.",
-            "homepage": "https://github.com/Whoisdoma/DomainParser/",
-            "keywords": [
-                "domain",
-                "domainparser",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/Whoisdoma/DomainParser/issues",
-                "source": "https://github.com/Whoisdoma/DomainParser/tree/master"
-            },
-            "time": "2020-12-31T13:02:05+00:00"
         }
     ],
     "packages-dev": [
@@ -9139,10 +9265,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "whoisdoma/dnsparser": 20,
-        "whoisdoma/domainparser": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

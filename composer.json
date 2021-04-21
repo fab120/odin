@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "badcow/dns": "^4.1",
         "doctrine/annotations": "^1.7",
         "doctrine/dbal": "^2.9",
         "embed/embed": "^3.4",
@@ -26,11 +27,10 @@
         "qortex/laravel-7-visual-diff": "^2.0",
         "sebastian/diff": "^3.0",
         "spatie/crawler": "^4.6",
+        "spatie/dns": "^1.6",
         "spatie/once": "^2.2",
         "spatie/ssl-certificate": "^1.15",
-        "visualappeal/php-ssllabs-api": "^1.0",
-        "whoisdoma/dnsparser": "dev-master",
-        "whoisdoma/domainparser": "dev-master"
+        "visualappeal/php-ssllabs-api": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

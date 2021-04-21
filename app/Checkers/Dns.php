@@ -5,8 +5,10 @@ namespace App\Checkers;
 use Exception;
 use App\DnsScan;
 use App\Website;
-use Whoisdoma\DNSParser\DNSParser;
+use Badcow\DNS\AlignedBuilder;
+use Badcow\DNS\Parser\Parser;
 use SebastianBergmann\Diff\Differ;
+use Spatie\Dns\Dns as SpatieDns;
 use App\Notifications\DnsHasChanged;
 
 class Dns
@@ -29,24 +31,38 @@ class Dns
 
     private function fetch()
     {
-        try {
-            $response = (new DNSParser('array'))->lookup($this->website->dns_hostname);
-        } catch (Exception $e) {
-            return logger()->error($e->getMessage());
+        $dns = SpatieDns::of($this->website->dns_hostname);
+        $nameservers = $dns->getRecords('NS');
+
+        preg_match_all('/NS (\S+)$/m', $nameservers, $matches, PREG_SET_ORDER);
+
+        if (count($matches) === 0) {
+            return logger()->error('Name servers not found for ' . $this->website->dns_hostname);
         }
 
-        $flat = collect($response['records'])->transform(function ($item) {
-            return sprintf(
-                '%s %s %s',
-                $item['host'],
-                $item['type'],
-                ($item['ip'] ?? $item['target'] ?? $item['mname'] ?? $item['txt'] ?? $item['ipv6'] ?? '')
-            );
-        })->sort()->values()->implode("\n");
+        $exception = null;
+
+        foreach ($matches as [, $nameserver]) {
+            $nameserver = rtrim($nameserver, '.');
+
+            try {
+                $response = $dns->useNameserver($nameserver)->getRecords();
+                $exception = null;
+
+                break;
+            } catch (Exception $e) {
+                $exception = $e;
+            }
+        }
+
+        if ($exception) {
+            return logger()->error($exception->getMessage());
+        }
+
+        $zone = Parser::parse($this->website->dns_hostname . '.', $response);
 
         $scan = new DnsScan([
-            'records' => $response['records'],
-            'flat' => $flat,
+            'flat' => (new AlignedBuilder())->build($zone),
         ]);
 
         $this->website->dns()->save($scan);
